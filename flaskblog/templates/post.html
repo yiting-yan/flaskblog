@@ -2,6 +2,8 @@
 
 {% extends "layout.html" %}
 {% block content %}
+
+  <!-- Post Area -->
   <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
     <div class="media-body">
@@ -19,6 +21,7 @@
       <p class="article-content">{{ post.content }}</p>
     </div>
   </article>
+
   <!-- Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -38,4 +41,31 @@
       </div>
     </div>
   </div>
+
+  <!-- Comment Area -->
+  <div class="content-section">
+  <form method="POST" action="">
+    <div class="form-group">
+      {{ form.comment(class="form-control form-control-lg") }}
+    </div>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+  </form>
+</div>
+
+
+{% for comment in comments %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + comment.commenter.image_file) }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ comment.commenter.username }}</a>
+        <small class="text-muted">{{ comment.date_posted.strftime('%Y-%m-%d') }}</small>
+      </div>
+      <p class="article-content">{{ comment.content }}</p>
+    </div>
+  </article>
+{% endfor %}
+
 {% endblock content %}

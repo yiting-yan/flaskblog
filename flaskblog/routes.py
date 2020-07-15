@@ -3,17 +3,21 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from flaskblog import app, db, bcrypt
-from flaskblog.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
-from flaskblog.models import User, Post
+from flaskblog.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, CommentForm
+from flaskblog.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user,login_required
 
 
 
 
 @app.route("/")
-@app.route("/home")
+@app.route("/home", methods = ['GET', 'POST'])
 def home():
-    posts = Post.query.all()
+    if request.method == 'POST':
+        text = request.form['search']
+        posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text)))
+    else:
+        posts = Post.query.all()
     return render_template('home.html', posts=posts)
 
 
@@ -107,10 +111,18 @@ def new_post():
 
 
 
-@app.route("/post/<int:post_id>")
+@app.route("/post/<int:post_id>", methods=['GET', 'POST'])
 def post(post_id):
     post = Post.query.get_or_404(post_id)
-    return render_template('post.html', title=post.title, post=post)
+    form = CommentForm()
+    if request.method == 'POST': #Why have to use post here?
+        c = Comment(content=form.comment.data,commenter=current_user,poster_id=post_id)
+        db.session.add(c)
+        db.session.commit()
+        return redirect(url_for('post',post_id=post_id))
+
+    comments = db.session.query(Comment).filter(Comment.poster_id==post_id)
+    return render_template('post.html', title=post.title, post=post, form=form, comments=comments)
 
 
 @app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
