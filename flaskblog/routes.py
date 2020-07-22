@@ -15,9 +15,9 @@ from flask_login import login_user, current_user, logout_user,login_required
 def home():
     if request.method == 'POST':
         text = request.form['search']
-        posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text)),Post.content.like("%{}%".format(text)))
+        posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text))).order_by(Post.id.desc())
     else:
-        posts = db.session.query(Post)
+        posts = db.session.query(Post).order_by(Post.id.desc())
     return render_template('home.html', posts=posts)
 
 
