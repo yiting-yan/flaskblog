@@ -116,9 +116,14 @@ def post(post_id):
     post = Post.query.get_or_404(post_id)
     form = CommentForm()
     if request.method == 'POST': #Why have to use post here?
-        c = Comment(content=form.comment.data,commenter=current_user,poster_id=post_id)
-        db.session.add(c)
-        db.session.commit()
+        if current_user.is_authenticated == False:
+            form  = LoginForm()
+            flash('Your need to login to comment', 'danger')
+            return render_template('login.html',  title='New Post', form=form)
+        else:
+            c = Comment(content=form.comment.data,commenter=current_user,poster_id=post_id)
+            db.session.add(c)
+            db.session.commit()
         return redirect(url_for('post',post_id=post_id))
 
     comments = db.session.query(Comment).filter(Comment.poster_id==post_id)
