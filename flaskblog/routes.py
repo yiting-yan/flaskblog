@@ -15,7 +15,7 @@ from flask_login import login_user, current_user, logout_user,login_required
 def home():
     if request.method == 'POST':
         text = request.form['search']
-        posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text)))
+        posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text)),Post.content.like("%{}%".format(text)))
     else:
         posts = Post.query.all()
     return render_template('home.html', posts=posts)
