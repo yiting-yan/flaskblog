@@ -17,7 +17,7 @@ def home():
         text = request.form['search']
         posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text)),Post.content.like("%{}%".format(text)))
     else:
-        posts = Post.query.all()
+        posts = db.session.query(Post)
     return render_template('home.html', posts=posts)
 
 

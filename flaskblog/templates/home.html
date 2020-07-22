@@ -8,20 +8,6 @@
     </form>
   </div>
 
-  {% for i in range(len(posts)) %}
-      <article class="media content-section">
-      <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
-        <div class="media-body">
-          <div class="article-metadata">
-            <a class="mr-2" href="#">{{ posts(i).author.username }}</a>
-            <small class="text-muted">{{ posts(i).date_posted.strftime('%Y-%m-%d') }}</small>
-          </div>
-          <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ posts(i).title }}</a></h2>
-          <p class="article-content">{{ posts(i).content }}</p>
-        </div>
-      </article>
-  {% endfor %}
-<!--
   {% for post in posts %}
       <article class="media content-section">
       <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
@@ -35,4 +21,4 @@
         </div>
       </article>
   {% endfor %}
-{% endblock content %} -->
+{% endblock content %}
