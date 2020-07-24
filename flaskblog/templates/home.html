@@ -18,7 +18,19 @@
           </div>
           <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
           <p class="article-content">{{ post.content }}</p>
+          <div class="">
+            <div class="dropdown-divider"></div>
+            {% if current_user.has_liked_post(post) %}
+              <a href="{{ url_for('like_action', post_id=post.id, action='unlike') }}">Unlike</a>
+            {% else %}
+              <a href="{{ url_for('like_action', post_id=post.id, action='like') }}">Like</a>
+            {% endif %}
+            <button type="button" class="btn btn-outline-primary">14 Like</button>
+            <a class="btn btn-outline-success" href="{{ url_for('post', post_id=post.id) }}">comment</a>
+
+          </div>
         </div>
       </article>
+
   {% endfor %}
 {% endblock content %}

@@ -126,7 +126,7 @@ def post(post_id):
             db.session.commit()
         return redirect(url_for('post',post_id=post_id))
 
-    comments = db.session.query(Comment).filter(Comment.poster_id==post_id)
+    comments = db.session.query(Comment).filter(Comment.poster_id==post_id).order_by(Comment.id.desc())
     return render_template('post.html', title=post.title, post=post, form=form, comments=comments)
 
 
@@ -176,4 +176,16 @@ def delete_post(post_id):
     db.session.delete(post)
     db.session.commit()
     flash('Your post has been deleted!', 'success')
+    return redirect(url_for('home'))
+
+@app.route('/like/<int:post_id>/<action>')
+@login_required
+def like_action(post_id, action):
+    post = Post.query.filter_by(id=post_id).first_or_404()
+    if action == 'like':
+        current_user.like_post(post)
+        db.session.commit()
+    if action == 'unlike':
+        current_user.unlike_post(post)
+        db.session.commit()
     return redirect(url_for('home'))
