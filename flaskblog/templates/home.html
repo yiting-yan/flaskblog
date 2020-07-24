@@ -20,13 +20,17 @@
           <p class="article-content">{{ post.content }}</p>
           <div class="">
             <div class="dropdown-divider"></div>
-            {% if current_user.has_liked_post(post) %}
-              <a href="{{ url_for('like_action', post_id=post.id, action='unlike') }}">Unlike</a>
-            {% else %}
-              <a href="{{ url_for('like_action', post_id=post.id, action='like') }}">Like</a>
-            {% endif %}
-            <button type="button" class="btn btn-outline-primary">14 Like</button>
-            <a class="btn btn-outline-success" href="{{ url_for('post', post_id=post.id) }}">comment</a>
+            {% if current_user.is_authenticated %}
+               {% if current_user.has_liked_post(post) %}
+                   <a class="btn btn-outline-primary" href="{{ url_for('like_action', post_id=post.id, action='unlike') }}">{{ post.likes.count() }} Unlike</a>
+               {% else %}
+                   <a class="btn btn-outline-primary" href="{{ url_for('like_action', post_id=post.id, action='like') }}">{{ post.likes.count() }} Like</a>
+               {% endif %}
+            {%endif%}
+            {% if current_user.is_authenticated == False %}
+              <a class="btn btn-outline-primary" href="{{ url_for('login', post_id=post.id) }}">{{ post.likes.count() }} Like</a>
+            {%endif%}
+            <a class="btn btn-outline-success" href="{{ url_for('post', post_id=post.id) }}">  comment</a>
 
           </div>
         </div>

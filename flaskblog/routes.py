@@ -119,7 +119,7 @@ def post(post_id):
         if current_user.is_authenticated == False:
             form  = LoginForm()
             flash('Your need to login to comment', 'danger')
-            return render_template('login.html',  title='New Post', form=form)
+            return redirect(url_for('login', post_id=post.id))
         else:
             c = Comment(content=form.comment.data,commenter=current_user,poster_id=post_id)
             db.session.add(c)
