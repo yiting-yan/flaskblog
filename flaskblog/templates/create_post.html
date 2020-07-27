@@ -31,6 +31,9 @@
                     {{ form.content(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+
+            {{ ckeditor.load() }}
+            {{ ckeditor.config(name='content') }}
         </fieldset>
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}

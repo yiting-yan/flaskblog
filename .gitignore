@@ -3,3 +3,7 @@ __pycache__/*
 
 flaskblog/__pycache__/*
 flaskblog/.DS_Store
+
+flaskblog/templates/.DS_Store
+flaskblog/static/profile_pics/.DS_Store
+flaskblog/static/.DS_Store
