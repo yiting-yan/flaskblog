@@ -38,8 +38,8 @@
                 <a class="nav-item nav-link" style="color:#000000;" href="{{ url_for('account') }}">{{current_user.username}} Account</a>
                 <a class="nav-item nav-link" style="color:#000000;" href="{{ url_for('logout') }}">Logout</a>
               {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+                <a class="nav-item nav-link" style="color:#000000;" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-item nav-link" style="color:#000000;" href="{{ url_for('register') }}">Register</a>
               {% endif %}
             </div>
           </div>
