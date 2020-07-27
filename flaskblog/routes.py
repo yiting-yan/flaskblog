@@ -2,7 +2,7 @@ import os
 import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
-from flaskblog import app, db, bcrypt
+from flaskblog import app, db, bcrypt, ckeditor
 from flaskblog.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, CommentForm
 from flaskblog.models import User, Post, Comment
 from flask_login import login_user, current_user, logout_user,login_required
@@ -121,7 +121,7 @@ def post(post_id):
             flash('Your need to login to comment', 'danger')
             return redirect(url_for('login', post_id=post.id))
         else:
-            c = Comment(content=form.comment.data,commenter=current_user,poster_id=post_id)
+            c = Comment(content=form.body.data,commenter=current_user,poster_id=post_id)
             db.session.add(c)
             db.session.commit()
         return redirect(url_for('post',post_id=post_id))
