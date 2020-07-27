@@ -3,3 +3,5 @@ flaskblog/.DS_Store
 
 __pycache__/*
 flaskblog/__pycache__/*
+
+flaskblog/__init__.pyc
