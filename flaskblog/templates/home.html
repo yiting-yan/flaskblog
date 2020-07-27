@@ -17,7 +17,7 @@
             <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
           </div>
           <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
-          <p class="article-content">{{ post.content[:200] | safe}} ... <a href="{{ url_for('post', post_id=post.id) }}">Read More</a> }}</p>
+          <p class="article-content">{{ post.content[:200] | safe}} ... <a href="{{ url_for('post', post_id=post.id) }}">Read More</a></p>
           <div class="">
             <div class="dropdown-divider"></div>
             {% if current_user.is_authenticated %}
@@ -30,7 +30,7 @@
             {% if current_user.is_authenticated == False %}
               <a class="btn btn-outline-primary" href="{{ url_for('login', post_id=post.id) }}">{{ post.likes.count() }} Like</a>
             {%endif%}
-            <a class="btn btn-outline-success" href="{{ url_for('post', post_id=post.id) }}"> comment</a>
+            <a class="btn btn-outline-success" href="{{ url_for('post', post_id=post.id) }}"> {{ post.comments.count() }}comment</a>
 
           </div>
         </div>
