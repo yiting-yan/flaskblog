@@ -14,7 +14,6 @@ from flask_login import login_user, current_user, logout_user,login_required
 def home():
     if request.method == 'POST':
         text = request.form['search']
-        # posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text))).order_by(Post.id.desc())
         posts = db.session.query(Post).filter(Post.content.like("%{}%".format(text)) | Post.title.like("%{}%".format(text))).order_by(Post.id.desc())
     else:
         posts = db.session.query(Post).order_by(Post.id.desc())
@@ -28,6 +27,7 @@ def about():
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    posts = db.session.query(Post).order_by(Post.id.desc())
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
@@ -38,11 +38,12 @@ def register():
         db.session.commit()
         flash(f'{form.username.data}, Your Account has been created! You are now able to log in', 'success')
         return redirect(url_for('home'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('register.html', title='Register', form=form, posts=posts)
 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    posts = db.session.query(Post).order_by(Post.id.desc())
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = LoginForm()
@@ -54,7 +55,7 @@ def login():
             return redirect(next_page) if next_page else redirect(url_for('home'))
         else:
             flash('Login Unsuccessful. Please check user email and password', 'danger')
-    return render_template('login.html', title='Login', form=form)
+    return render_template('login.html', title='Login', form=form, posts=posts)
 
 @app.route("/logout")
 def logout():
@@ -78,6 +79,7 @@ def save_picture(form_picture):
 @app.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
+    posts = db.session.query(Post).order_by(Post.id.desc())
     form = UpdateAccountForm()
     if form.validate_on_submit():
         if form.picture.data:
@@ -93,13 +95,14 @@ def account():
         form.email.data = current_user.email
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account',
-                           image_file=image_file, form=form)
+                           image_file=image_file, form=form, posts = posts)
 
 
 
 @app.route("/post/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
+    posts = db.session.query(Post).order_by(Post.id.desc())
     form = PostForm()
     if form.validate_on_submit():
         post = Post(title=form.title.data, content = form.content.data, author=current_user)
@@ -107,7 +110,7 @@ def new_post():
         db.session.commit()
         flash('Your post has been created', 'success ')
         return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post', form=form)
+    return render_template('create_post.html', title='New Post', form=form, posts = posts)
 
 
 
