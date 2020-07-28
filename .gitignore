@@ -1,11 +1,19 @@
 .DS_Store
+
 __pycache__/
 
 
 flaskblog/.DS_Store
+
 flaskblog/__pycache__/
+
 flaskblog/__init__.pyc
+
 flaskblog/templates/.DS_Store
+
 flaskblog/static/profile_pics/.DS_Store
+
 flaskblog/static/.DS_Store
+
+flaskblog/static/images/.DS_Store
 
