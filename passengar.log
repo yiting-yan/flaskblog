@@ -1,0 +1,98 @@
+App 2539734 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 2539734 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 2640533 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 2640533 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 2640533 output: [ pid=2640533, time=2020-07-27 18:11:47,180 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 2640533 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 2640533 output: 
+App 2640642 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 2640642 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 2640642 output: [ pid=2640642, time=2020-07-27 18:11:48,935 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 2640642 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 2640642 output: 
+App 3321352 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 3321352 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 3321352 output: [ pid=3321352, time=2020-07-27 21:03:06,279 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 3321352 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 3321352 output: 
+App 3322701 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 3322701 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 3322701 output: [ pid=3322701, time=2020-07-27 21:03:27,806 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 3322701 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 3322701 output: 
+App 3388790 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 3388790 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 3388790 output: [ pid=3388790, time=2020-07-27 21:19:39,421 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 3388790 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 3388790 output: 
+App 3321352 output: [ pid=3321352, time=2020-07-27 21:24:57,937 ]: Exception on /account [GET]
+App 3321352 output: Traceback (most recent call last):
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+App 3321352 output:     response = self.full_dispatch_request()
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 3321352 output:     rv = self.handle_user_exception(e)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 3321352 output:     reraise(exc_type, exc_value, tb)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+App 3321352 output:     raise value
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 3321352 output:     rv = self.dispatch_request()
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+App 3321352 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
+App 3321352 output:     return current_app.login_manager.unauthorized()
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
+App 3321352 output:     redirect_url = make_login_url(login_view, next_url=request.url)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
+App 3321352 output:     base = expand_login_view(login_view)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
+App 3321352 output:     return url_for(login_view)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+App 3321352 output:     return appctx.app.handle_url_build_error(error, endpoint, values)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
+App 3321352 output:     reraise(exc_type, exc_value, tb)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+App 3321352 output:     raise value
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+App 3321352 output:     endpoint, values, method=method, force_external=external
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+App 3321352 output:     raise BuildError(endpoint, values, method, self)
+App 3321352 output: werkzeug.routing.BuildError: Could not build url for endpoint 'Login'. Did you mean 'login' instead?
+App 3435407 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 3435407 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 3435407 output: [ pid=3435407, time=2020-07-27 21:31:38,175 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 3435407 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 3435407 output: 
+App 3321352 output: [ pid=3321352, time=2020-07-27 21:34:05,672 ]: Exception on /post/new [GET]
+App 3321352 output: Traceback (most recent call last):
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+App 3321352 output:     response = self.full_dispatch_request()
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 3321352 output:     rv = self.handle_user_exception(e)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 3321352 output:     reraise(exc_type, exc_value, tb)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+App 3321352 output:     raise value
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 3321352 output:     rv = self.dispatch_request()
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+App 3321352 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 271, in decorated_view
+App 3321352 output:     return current_app.login_manager.unauthorized()
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/login_manager.py", line 174, in unauthorized
+App 3321352 output:     redirect_url = make_login_url(login_view, next_url=request.url)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 120, in login_url
+App 3321352 output:     base = expand_login_view(login_view)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 97, in expand_login_view
+App 3321352 output:     return url_for(login_view)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
+App 3321352 output:     return appctx.app.handle_url_build_error(error, endpoint, values)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
+App 3321352 output:     reraise(exc_type, exc_value, tb)
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+App 3321352 output:     raise value
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
+App 3321352 output:     endpoint, values, method=method, force_external=external
+App 3321352 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
+App 3321352 output:     raise BuildError(endpoint, values, method, self)
+App 3321352 output: werkzeug.routing.BuildError: Could not build url for endpoint 'Login'. Did you mean 'login' instead?

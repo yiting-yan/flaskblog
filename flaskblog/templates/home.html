@@ -1,0 +1,40 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+  <div class="md-form active-cyan active-cyan-2 mb-3" role="search">
+    <form action="#" method="POST">
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search" placeholder="Search..." name="search">
+    </form>
+  </div>
+
+  {% for post in posts %}
+      <article class="media content-section" style="background-color:#ffffff;">
+      <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ post.author.username }}</a>
+            <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+          </div>
+          <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+          <p class="article-content">{{ post.content[:200] | safe}} ... <a href="{{ url_for('post', post_id=post.id) }}">Read More</a></p>
+          <div class="">
+            <div class="dropdown-divider"></div>
+            {% if current_user.is_authenticated %}
+               {% if current_user.has_liked_post(post) %}
+                   <a class="btn btn-primary" href="{{ url_for('like_action', post_id=post.id, action='unlike') }}">{{ post.likes.count() }} Liked</a>
+               {% else %}
+                   <a class="btn btn-outline-primary" href="{{ url_for('like_action', post_id=post.id, action='like') }}">{{ post.likes.count() }} Like</a>
+               {% endif %}
+            {%endif%}
+            {% if current_user.is_authenticated == False %}
+              <a class="btn btn-outline-primary" href="{{ url_for('login', post_id=post.id) }}">{{ post.likes.count() }} Like</a>
+            {%endif%}
+            <a class="btn btn-outline-success" href="{{ url_for('post', post_id=post.id) }}"> {{ post.comments.count() }}comment</a>
+
+          </div>
+        </div>
+      </article>
+
+  {% endfor %}
+{% endblock content %}
