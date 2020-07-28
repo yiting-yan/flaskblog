@@ -9,13 +9,13 @@ from flask_login import login_user, current_user, logout_user,login_required
 
 
 
-
 @app.route("/", methods = ['GET', 'POST'])
 @app.route("/home", methods = ['GET', 'POST'])
 def home():
     if request.method == 'POST':
         text = request.form['search']
-        posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text))).order_by(Post.id.desc())
+        # posts = db.session.query(Post).filter(Post.title.like("%{}%".format(text))).order_by(Post.id.desc())
+        posts = db.session.query(Post).filter(Post.content.like("%{}%".format(text)) | Post.title.like("%{}%".format(text))).order_by(Post.id.desc())
     else:
         posts = db.session.query(Post).order_by(Post.id.desc())
     return render_template('home.html', posts=posts)
