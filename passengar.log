@@ -111,3 +111,310 @@ App 4081036 output:   import sys, os, io, re, imp, threading, signal, traceback,
 App 4081036 output: [ pid=4081036, time=2020-07-28 00:01:47,177 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
 App 4081036 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
 App 4081036 output: 
+App 4178838 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 4178838 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 4178838 output: [ pid=4178838, time=2020-07-28 00:23:54,575 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 4178838 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 4178838 output: 
+App 4178838 output: [ pid=4178838, time=2020-07-28 00:57:09,500 ]: Exception on /post/2/delete [POST]
+App 4178838 output: Traceback (most recent call last):
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
+App 4178838 output:     cursor, statement, parameters, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+App 4178838 output:     cursor.execute(statement, parameters)
+App 4178838 output: sqlite3.IntegrityError: like.post_id may not be NULL
+App 4178838 output: 
+App 4178838 output: The above exception was the direct cause of the following exception:
+App 4178838 output: 
+App 4178838 output: Traceback (most recent call last):
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+App 4178838 output:     response = self.full_dispatch_request()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 4178838 output:     rv = self.handle_user_exception(e)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 4178838 output:     reraise(exc_type, exc_value, tb)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+App 4178838 output:     raise value
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 4178838 output:     rv = self.dispatch_request()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+App 4178838 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+App 4178838 output:     return func(*args, **kwargs)
+App 4178838 output:   File "/home/zoidhbzhj292/ourhub/flaskblog/routes.py", line 180, in delete_post
+App 4178838 output:     db.session.commit()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+App 4178838 output:     return getattr(self.registry(), name)(*args, **kwargs)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+App 4178838 output:     self.transaction.commit()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+App 4178838 output:     self._prepare_impl()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+App 4178838 output:     self.session.flush()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2523, in flush
+App 4178838 output:     self._flush(objects)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2664, in _flush
+App 4178838 output:     transaction.rollback(_capture_exception=True)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 69, in __exit__
+App 4178838 output:     exc_value, with_traceback=exc_tb,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+App 4178838 output:     raise exception
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2624, in _flush
+App 4178838 output:     flush_context.execute()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+App 4178838 output:     rec.execute(self)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+App 4178838 output:     uow,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+App 4178838 output:     update,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
+App 4178838 output:     statement, multiparams
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1014, in execute
+App 4178838 output:     return meth(self, multiparams, params)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+App 4178838 output:     return connection._execute_clauseelement(self, multiparams, params)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1133, in _execute_clauseelement
+App 4178838 output:     distilled_params,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1318, in _execute_context
+App 4178838 output:     e, statement, parameters, cursor, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1512, in _handle_dbapi_exception
+App 4178838 output:     sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+App 4178838 output:     raise exception
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
+App 4178838 output:     cursor, statement, parameters, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+App 4178838 output:     cursor.execute(statement, parameters)
+App 4178838 output: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) like.post_id may not be NULL
+App 4178838 output: [SQL: UPDATE "like" SET post_id=? WHERE "like".id = ?]
+App 4178838 output: [parameters: (None, 5)]
+App 4178838 output: (Background on this error at: http://sqlalche.me/e/13/gkpj)
+App 4178838 output: [ pid=4178838, time=2020-07-28 00:58:28,542 ]: Exception on /post/2/delete [POST]
+App 4178838 output: Traceback (most recent call last):
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
+App 4178838 output:     cursor, statement, parameters, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+App 4178838 output:     cursor.execute(statement, parameters)
+App 4178838 output: sqlite3.IntegrityError: like.post_id may not be NULL
+App 4178838 output: 
+App 4178838 output: The above exception was the direct cause of the following exception:
+App 4178838 output: 
+App 4178838 output: Traceback (most recent call last):
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+App 4178838 output:     response = self.full_dispatch_request()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 4178838 output:     rv = self.handle_user_exception(e)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 4178838 output:     reraise(exc_type, exc_value, tb)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+App 4178838 output:     raise value
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 4178838 output:     rv = self.dispatch_request()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+App 4178838 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+App 4178838 output:     return func(*args, **kwargs)
+App 4178838 output:   File "/home/zoidhbzhj292/ourhub/flaskblog/routes.py", line 180, in delete_post
+App 4178838 output:     db.session.commit()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+App 4178838 output:     return getattr(self.registry(), name)(*args, **kwargs)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+App 4178838 output:     self.transaction.commit()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+App 4178838 output:     self._prepare_impl()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+App 4178838 output:     self.session.flush()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2523, in flush
+App 4178838 output:     self._flush(objects)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2664, in _flush
+App 4178838 output:     transaction.rollback(_capture_exception=True)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 69, in __exit__
+App 4178838 output:     exc_value, with_traceback=exc_tb,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+App 4178838 output:     raise exception
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2624, in _flush
+App 4178838 output:     flush_context.execute()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+App 4178838 output:     rec.execute(self)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+App 4178838 output:     uow,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+App 4178838 output:     update,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
+App 4178838 output:     statement, multiparams
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1014, in execute
+App 4178838 output:     return meth(self, multiparams, params)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+App 4178838 output:     return connection._execute_clauseelement(self, multiparams, params)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1133, in _execute_clauseelement
+App 4178838 output:     distilled_params,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1318, in _execute_context
+App 4178838 output:     e, statement, parameters, cursor, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1512, in _handle_dbapi_exception
+App 4178838 output:     sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+App 4178838 output:     raise exception
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
+App 4178838 output:     cursor, statement, parameters, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+App 4178838 output:     cursor.execute(statement, parameters)
+App 4178838 output: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) like.post_id may not be NULL
+App 4178838 output: [SQL: UPDATE "like" SET post_id=? WHERE "like".id = ?]
+App 4178838 output: [parameters: (None, 5)]
+App 4178838 output: (Background on this error at: http://sqlalche.me/e/13/gkpj)
+App 4178838 output: [ pid=4178838, time=2020-07-28 00:58:36,655 ]: Exception on /post/1/delete [POST]
+App 4178838 output: Traceback (most recent call last):
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1258, in _execute_context
+App 4178838 output:     cursor, statement, parameters, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 590, in do_executemany
+App 4178838 output:     cursor.executemany(statement, parameters)
+App 4178838 output: sqlite3.IntegrityError: like.post_id may not be NULL
+App 4178838 output: 
+App 4178838 output: The above exception was the direct cause of the following exception:
+App 4178838 output: 
+App 4178838 output: Traceback (most recent call last):
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+App 4178838 output:     response = self.full_dispatch_request()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 4178838 output:     rv = self.handle_user_exception(e)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 4178838 output:     reraise(exc_type, exc_value, tb)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+App 4178838 output:     raise value
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 4178838 output:     rv = self.dispatch_request()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+App 4178838 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+App 4178838 output:     return func(*args, **kwargs)
+App 4178838 output:   File "/home/zoidhbzhj292/ourhub/flaskblog/routes.py", line 180, in delete_post
+App 4178838 output:     db.session.commit()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+App 4178838 output:     return getattr(self.registry(), name)(*args, **kwargs)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+App 4178838 output:     self.transaction.commit()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+App 4178838 output:     self._prepare_impl()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+App 4178838 output:     self.session.flush()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2523, in flush
+App 4178838 output:     self._flush(objects)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2664, in _flush
+App 4178838 output:     transaction.rollback(_capture_exception=True)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 69, in __exit__
+App 4178838 output:     exc_value, with_traceback=exc_tb,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+App 4178838 output:     raise exception
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2624, in _flush
+App 4178838 output:     flush_context.execute()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+App 4178838 output:     rec.execute(self)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+App 4178838 output:     uow,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+App 4178838 output:     update,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
+App 4178838 output:     statement, multiparams
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1014, in execute
+App 4178838 output:     return meth(self, multiparams, params)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+App 4178838 output:     return connection._execute_clauseelement(self, multiparams, params)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1133, in _execute_clauseelement
+App 4178838 output:     distilled_params,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1318, in _execute_context
+App 4178838 output:     e, statement, parameters, cursor, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1512, in _handle_dbapi_exception
+App 4178838 output:     sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+App 4178838 output:     raise exception
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1258, in _execute_context
+App 4178838 output:     cursor, statement, parameters, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 590, in do_executemany
+App 4178838 output:     cursor.executemany(statement, parameters)
+App 4178838 output: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) like.post_id may not be NULL
+App 4178838 output: [SQL: UPDATE "like" SET post_id=? WHERE "like".id = ?]
+App 4178838 output: [parameters: ((None, 1), (None, 6))]
+App 4178838 output: (Background on this error at: http://sqlalche.me/e/13/gkpj)
+App 164516 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 164516 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 164516 output: [ pid=164516, time=2020-07-28 01:03:39,505 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 164516 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 164516 output: 
+App 187817 output: /opt/passenger-5.3.7-9.el6.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 187817 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 187817 output: [ pid=187817, time=2020-07-28 01:08:19,269 ]: /home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+App 187817 output:   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+App 187817 output: 
+App 4178838 output: [ pid=4178838, time=2020-07-28 01:09:41,591 ]: Exception on /post/2/delete [POST]
+App 4178838 output: Traceback (most recent call last):
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
+App 4178838 output:     cursor, statement, parameters, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+App 4178838 output:     cursor.execute(statement, parameters)
+App 4178838 output: sqlite3.IntegrityError: like.post_id may not be NULL
+App 4178838 output: 
+App 4178838 output: The above exception was the direct cause of the following exception:
+App 4178838 output: 
+App 4178838 output: Traceback (most recent call last):
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+App 4178838 output:     response = self.full_dispatch_request()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 4178838 output:     rv = self.handle_user_exception(e)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 4178838 output:     reraise(exc_type, exc_value, tb)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+App 4178838 output:     raise value
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 4178838 output:     rv = self.dispatch_request()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+App 4178838 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+App 4178838 output:     return func(*args, **kwargs)
+App 4178838 output:   File "/home/zoidhbzhj292/ourhub/flaskblog/routes.py", line 180, in delete_post
+App 4178838 output:     db.session.commit()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+App 4178838 output:     return getattr(self.registry(), name)(*args, **kwargs)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+App 4178838 output:     self.transaction.commit()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+App 4178838 output:     self._prepare_impl()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+App 4178838 output:     self.session.flush()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2523, in flush
+App 4178838 output:     self._flush(objects)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2664, in _flush
+App 4178838 output:     transaction.rollback(_capture_exception=True)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 69, in __exit__
+App 4178838 output:     exc_value, with_traceback=exc_tb,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+App 4178838 output:     raise exception
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2624, in _flush
+App 4178838 output:     flush_context.execute()
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+App 4178838 output:     rec.execute(self)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+App 4178838 output:     uow,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+App 4178838 output:     update,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
+App 4178838 output:     statement, multiparams
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1014, in execute
+App 4178838 output:     return meth(self, multiparams, params)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+App 4178838 output:     return connection._execute_clauseelement(self, multiparams, params)
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1133, in _execute_clauseelement
+App 4178838 output:     distilled_params,
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1318, in _execute_context
+App 4178838 output:     e, statement, parameters, cursor, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1512, in _handle_dbapi_exception
+App 4178838 output:     sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+App 4178838 output:     raise exception
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
+App 4178838 output:     cursor, statement, parameters, context
+App 4178838 output:   File "/home/zoidhbzhj292/virtualenv/ourhub/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+App 4178838 output:     cursor.execute(statement, parameters)
+App 4178838 output: sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) like.post_id may not be NULL
+App 4178838 output: [SQL: UPDATE "like" SET post_id=? WHERE "like".id = ?]
+App 4178838 output: [parameters: (None, 5)]
+App 4178838 output: (Background on this error at: http://sqlalche.me/e/13/gkpj)
