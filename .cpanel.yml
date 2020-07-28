@@ -1,7 +1,7 @@
 ---
 deployment:
  tasks:
- - export DEPLOYPATH = /home/zoidhbzhj292/public_html/cgi-bin/ourhub/flaskblog
+ - export DEPLOYPATH = /home/zoidhbzhj292/ourhub/flaskblog
  - /bin/cp __init__.py $DEPLOYPATH
  - /bin/cp forms.py $DEPLOYPATH
  - /bin/cp models.py $DEPLOYPATH
