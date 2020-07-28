@@ -110,12 +110,13 @@ def new_post():
         db.session.commit()
         flash('Your post has been created', 'success ')
         return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post', form=form, posts = posts)
+    return render_template('create_post.html', title='New Post', form=form, posts=posts)
 
 
 
 @app.route("/post/<int:post_id>", methods=['GET', 'POST'])
 def post(post_id):
+    posts = db.session.query(Post).order_by(Post.id.desc())
     post = Post.query.get_or_404(post_id)
     form = CommentForm()
     if request.method == 'POST': #Why have to use post here?
@@ -130,11 +131,12 @@ def post(post_id):
         return redirect(url_for('post',post_id=post_id))
 
     comments = db.session.query(Comment).filter(Comment.poster_id==post_id).order_by(Comment.id.desc())
-    return render_template('post.html', title=post.title, post=post, form=form, comments=comments)
+    return render_template('post.html', title=post.title, post=post, form=form, comments=comments, posts=posts)
 
 
 @app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
 def update_post(post_id):
+    posts = db.session.query(Post).order_by(Post.id.desc())
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:
         abort(403)
@@ -149,7 +151,7 @@ def update_post(post_id):
         form.title.data = post.title
         form.content.data = post.content
     return render_template('create_post.html', title='Update Post',
-                           form=form, legend='Update Post')
+                           form=form, legend='Update Post', posts=posts)
 
 #
 # @app.route("/post/<int:post_id>/delete", methods=['GET', 'POST'])
